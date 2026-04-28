@@ -76,3 +76,18 @@ Useful scripts:
 - `pnpm check` — lint, typecheck, and test
 - `pnpm test` — Vitest only
 - `pnpm format` — Biome write mode
+
+## Release
+
+Releases are manual. This project intentionally does not use Release Please or
+conventional-commit release automation.
+
+```sh
+pnpm version patch --no-git-tag-version
+pnpm check
+pnpm pack:dry-run
+```
+
+Commit the version bump, merge to `main`, then run the `release` workflow from
+GitHub Actions. The workflow verifies the package, checks that the version is
+not already published, and publishes to npm with provenance using `NPM_TOKEN`.

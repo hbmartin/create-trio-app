@@ -1,6 +1,7 @@
 import { spawnSync } from "node:child_process";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
+import packageJson from "../package.json" with { type: "json" };
 import type { AddModuleOptions, CreateOptions } from "./args.js";
 import { CliError } from "./errors.js";
 import {
@@ -13,7 +14,7 @@ import { normalizeProjectTitle, parseModuleName } from "./names.js";
 import { createModuleTemplateFiles } from "./templates/module.js";
 import { createProductionCoreTemplateFiles } from "./templates/production-core.js";
 
-export const GENERATOR_VERSION = "0.1.0";
+export const GENERATOR_VERSION = packageJson.version;
 
 export interface CommandInvocation {
 	command: string;
