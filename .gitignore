@@ -4,3 +4,5 @@ coverage
 *.tsbuildinfo
 .DS_Store
 tmp
+triage_decisions.db
+reviews_triage/

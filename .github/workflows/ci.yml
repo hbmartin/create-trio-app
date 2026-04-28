@@ -32,7 +32,11 @@ jobs:
 
       - run: pnpm audit:prod
 
-      - run: pnpm check
+      - run: pnpm lint
+
+      - run: pnpm typecheck
+
+      - run: pnpm package:check
 
       - run: pnpm pack:dry-run
 
