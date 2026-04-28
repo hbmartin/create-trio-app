@@ -1,0 +1,4 @@
+paths-ignore:
+  - dist
+  - node_modules
+  - coverage

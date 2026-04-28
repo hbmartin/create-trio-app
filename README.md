@@ -75,6 +75,9 @@ Useful scripts:
 - `pnpm dev` — run the CLI from sources via `tsx`
 - `pnpm check` — lint, typecheck, and test
 - `pnpm test` — Vitest only
+- `pnpm test:coverage` — Vitest with V8 coverage output
+- `pnpm audit:prod` — audit production dependencies
+- `pnpm pack:dry-run` — verify npm publish contents
 - `pnpm format` — Biome write mode
 
 ## Release
