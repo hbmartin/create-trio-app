@@ -48,7 +48,6 @@
 		"lint": "biome check --error-on-warnings .",
 		"package:check": "pnpm build && publint && attw --pack . --profile esm-only",
 		"pack:dry-run": "npm pack --dry-run",
-		"prepack": "pnpm build",
 		"prepublishOnly": "pnpm check",
 		"test": "vitest run",
 		"test:coverage": "vitest run --coverage",
