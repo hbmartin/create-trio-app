@@ -95,4 +95,16 @@ describe("package lifecycle scripts", () => {
 			),
 		).resolves.toMatchObject({ stderr: "", stdout: "" });
 	});
+
+	it("passes the packed tarball directly to publint", async () => {
+		const packageCheckScript = await readFile(
+			path.join(process.cwd(), "scripts/package-check.mjs"),
+			"utf8",
+		);
+
+		expect(packageCheckScript).toContain(
+			'"exec", "publint", tarballPath, "--pack", "false"',
+		);
+		expect(packageCheckScript).not.toContain('"exec", "publint", "run"');
+	});
 });
