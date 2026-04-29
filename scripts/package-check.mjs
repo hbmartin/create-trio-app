@@ -61,7 +61,7 @@ try {
 
 	const tarballPath = path.join(packDestination, tarballName);
 
-	await run("pnpm", ["exec", "publint", "run", tarballPath, "--pack", "false"]);
+	await run("pnpm", ["exec", "publint", tarballPath, "--pack", "false"]);
 	await run("pnpm", ["exec", "attw", tarballPath, "--profile", "esm-only"]);
 } finally {
 	await rm(packDestination, { recursive: true, force: true });
