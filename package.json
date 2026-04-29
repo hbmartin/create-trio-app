@@ -46,9 +46,10 @@
 		"dev": "tsx src/cli.ts",
 		"format": "biome check --write .",
 		"lint": "biome check --error-on-warnings .",
-		"package:check": "pnpm build && publint && attw --pack . --profile esm-only",
-		"pack:dry-run": "npm pack --dry-run",
-		"prepublishOnly": "pnpm check",
+		"package:check": "node scripts/package-check.mjs",
+		"pack:dry-run": "pnpm pack --dry-run",
+		"prepack": "node scripts/package-check.mjs --prepack",
+		"prepublishOnly": "pnpm lint && pnpm typecheck && pnpm test",
 		"test": "vitest run",
 		"test:coverage": "vitest run --coverage",
 		"typecheck": "tsc -p tsconfig.json --noEmit"
