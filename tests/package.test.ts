@@ -102,9 +102,11 @@ describe("package lifecycle scripts", () => {
 			"utf8",
 		);
 
-		expect(packageCheckScript).toContain(
-			'"exec", "publint", tarballPath, "--pack", "false"',
+		expect(packageCheckScript).toMatch(
+			/"exec"\s*,\s*"publint"\s*,\s*tarballPath\s*,\s*"--pack"\s*,\s*"false"/,
 		);
-		expect(packageCheckScript).not.toContain('"exec", "publint", "run"');
+		expect(packageCheckScript).not.toMatch(
+			/"exec"\s*,\s*"publint"\s*,\s*"run"/,
+		);
 	});
 });
